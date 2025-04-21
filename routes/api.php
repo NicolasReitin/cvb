@@ -14,16 +14,14 @@ Route::post('/login-test', function () {
     return ['token' => $user->createToken('test-token')->plainTextToken];
 });
 
-Route::middleware('auth:sanctum')->get('/dashboard', function () {
-    return ['message' => 'Bienvenue sur ton dashboard API, DevBuddy !'];
-});
-
-
-
 // News
+// Routes publiques
 Route::get('news', [NewsController::class, 'index']);
-Route::get('news/{id}', [NewsController::class, 'show']);
-Route::post('news', [NewsController::class, 'store']);
-Route::put('news/{id}', [NewsController::class, 'update']);
-Route::delete('news/{id}', [NewsController::class, 'destroy']);
+Route::get('news/{news}', [NewsController::class, 'show']);
 
+// Routes protégées
+Route::middleware('auth:sanctum')->group(function () {
+    Route::post('news', [NewsController::class, 'store']);
+    Route::put('news/{news}', [NewsController::class, 'update']);
+    Route::delete('news/{news}', [NewsController::class, 'destroy']);
+});
