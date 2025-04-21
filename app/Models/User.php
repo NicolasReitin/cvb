@@ -45,12 +45,12 @@ class User extends Authenticatable
 
     public function getRole(): RoleEnum
     {
-        return RoleEnum::STAFF; //par defaut
+        return RoleEnum::from($this->role); // Convertit la valeur stockée en RoleEnum
     }
 
     // Méthode pour assigner un rôle
     public function setRole(RoleEnum $role)
     {
-        $this->role = $role;
+        $this->role = $role->value;
     }
 }

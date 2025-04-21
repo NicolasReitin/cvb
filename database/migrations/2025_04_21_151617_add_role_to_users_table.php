@@ -10,7 +10,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('role')->default(RoleEnum::STAFF);
+            $table->string('role')->default(RoleEnum::STAFF->value);
             $table->timestamp('deleted_at')->nullable();
         });
     }
