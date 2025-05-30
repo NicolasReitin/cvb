@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\NewsRequest;
 use App\Models\News;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
 
 class NewsController extends Controller
 {
@@ -22,7 +21,7 @@ class NewsController extends Controller
     }
 
 
-    // Créer un nouveau news
+    // Créer une nouvelle news
     public function store(NewsRequest $request): JsonResponse
     {
         $news = News::create($request->validated());

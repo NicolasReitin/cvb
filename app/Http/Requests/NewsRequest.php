@@ -6,9 +6,6 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class NewsRequest extends FormRequest
 {
-    /**
-     * Détermine si l'utilisateur est autorisé à effectuer cette requête.
-     */
     public function authorize(): bool
     {
         return true;
@@ -16,8 +13,6 @@ class NewsRequest extends FormRequest
     }
 
     /**
-     * Obtenez les règles de validation pour la requête.
-     *
      * @return array
      */
     public function rules()
@@ -25,7 +20,7 @@ class NewsRequest extends FormRequest
         return [
             'title' => 'required|string|max:255',
             'content' => 'nullable|string',
-            'auhtor' => 'required|string|max:50',
+            'author' => 'required|string|max:50',
             'photo' => 'nullable|string',
             'senior_team_id' => 'nullable|exists:senior_team,id',
             'young_team_id' => 'nullable|exists:young_team,id',
@@ -33,8 +28,6 @@ class NewsRequest extends FormRequest
     }
 
     /**
-     * Personnaliser les messages d'erreur (facultatif)
-     *
      * @return array
      */
     public function messages()
