@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
+use App\Http\Resources\PostResource;
 use App\Models\Post;
 use Illuminate\Http\JsonResponse;
 
@@ -18,9 +19,9 @@ class PostController extends Controller
         $othersPosts = $latestPost->skip(1);
 
         return response()->json([
-            'firstPost' => $firstPost ? ActualitesResource::make($firstPost) : null,
-            'posts' => $posts ? ActualitesResource::collection($posts) : null,
-            'othersPosts' => $othersPosts ? ActualitesResource::collection($othersPosts) : null
+            'firstPost' => $firstPost ? PostResource::make($firstPost) : null,
+            'posts' => $posts ? PostResource::collection($posts) : null,
+            'othersPosts' => $othersPosts ? PostResource::collection($othersPosts) : null
         ]);
     }
     
