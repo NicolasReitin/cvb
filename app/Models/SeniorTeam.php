@@ -28,7 +28,7 @@ class SeniorTeam extends Model
     }
 
     //1-n avec actualites
-    public function news() { 
-        return $this->hasMany(News::class);
+    public function posts() { 
+        return $this->hasMany(Post::class);
     }
 }

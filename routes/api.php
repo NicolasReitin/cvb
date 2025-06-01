@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\NewsController;
+use App\Http\Controllers\PostController;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -14,14 +14,14 @@ Route::post('/login-test', function () {
     return ['token' => $user->createToken('test-token')->plainTextToken];
 });
 
-// News
+// Post
 // Routes publiques
-Route::get('news', [NewsController::class, 'index']);
-Route::get('news/{news}', [NewsController::class, 'show']);
+Route::get('actualités', [PostController::class, 'index']);
+Route::get('actualité/{post}', [PostController::class, 'show']);
 
 // Routes protégées
 Route::middleware('auth:sanctum')->group(function () {
-    Route::post('news', [NewsController::class, 'store']);
-    Route::put('news/{news}', [NewsController::class, 'update']);
-    Route::delete('news/{news}', [NewsController::class, 'destroy']);
+    Route::post('actualité', [PostController::class, 'store']);
+    Route::put('actualité/{post}', [PostController::class, 'update']);
+    Route::delete('actualité/{post}', [PostController::class, 'destroy']);
 });
