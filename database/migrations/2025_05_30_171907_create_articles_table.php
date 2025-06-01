@@ -12,7 +12,7 @@ return new class extends Migration
             $table->id();
             $table->string('name', 255);
             $table->string('size', 20)->nullable();
-            $table->decimal(8, 2);
+            $table->decimal('price', 8, 2);
             $table->string('photo');
             $table->timestamps();
         });

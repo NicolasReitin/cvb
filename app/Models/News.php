@@ -17,8 +17,6 @@ class News extends Model
         'content',
         'author',
         'photo',
-        'senior_team_id',
-        'young_team_id',
     ];
 
     public function senior_teams(): BelongsTo
