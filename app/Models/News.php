@@ -21,12 +21,12 @@ class News extends Model
         'young_team_id',
     ];
 
-    public function equipe_senior(): BelongsTo
+    public function senior_teams(): BelongsTo
     {
         return $this->belongsTo(SeniorTeam::class);
     }
 
-    public function equipe_jeune(): BelongsTo
+    public function young_teams(): BelongsTo
     {
         return $this->belongsTo(YoungTeam::class);
     }
