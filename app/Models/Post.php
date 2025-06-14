@@ -19,13 +19,8 @@ class Post extends Model
         'photo',
     ];
 
-    public function senior_teams(): BelongsTo
+    public function teams(): BelongsTo
     {
-        return $this->belongsTo(SeniorTeam::class);
-    }
-
-    public function young_teams(): BelongsTo
-    {
-        return $this->belongsTo(YoungTeam::class);
+        return $this->belongsTo(Team::class);
     }
 }

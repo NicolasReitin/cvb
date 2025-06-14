@@ -22,13 +22,8 @@ class Player extends Model
         'photo',
     ];
 
-    //n-n avec equipe_seniors
-    public function senior_teams() { 
-        return $this->belongsToMany(SeniorTeam::class);
-    }
-
-    //n-n avec equipe_jeunes
-    public function young_teams() { 
-        return $this->belongsToMany(YoungTeam::class);
+    //n-n avec equipe
+    public function teams() { 
+        return $this->belongsToMany(Team::class);
     }
 }

@@ -8,9 +8,11 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('young_teams', function (Blueprint $table) {
+        Schema::create('teams', function (Blueprint $table) {
             $table->id();
             $table->string('name', 55);
+            $table->enum('category', ['senior', 'young']);
+            $table->enum('sex', ['male', 'female', 'mixed']);
             $table->string('division', 55)->nullable();
             $table->string('photo')->nullable();
             $table->timestamps();
@@ -20,6 +22,6 @@ return new class extends Migration
 
     public function down(): void
     {
-        Schema::dropIfExists('young_teams');
+        Schema::dropIfExists('teams');
     }
 };

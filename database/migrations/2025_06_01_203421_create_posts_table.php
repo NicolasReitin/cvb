@@ -14,8 +14,7 @@ return new class extends Migration
             $table->text('content')->Nullable();
             $table->string('author', 50);
             $table->string('photo')->nullable();
-            $table->foreignId('senior_team_id')->nullable()->constrained()->onDelete('set null');
-            $table->foreignId('young_team_id')->nullable()->constrained()->onDelete('set null');
+            $table->foreignId('team_id')->nullable()->constrained()->onDelete('set null');
             $table->timestamps();
             $table->softDeletes();
         });

@@ -21,15 +21,9 @@ class Staff extends Model
         'photo',
     ];
 
-    //n-n avec equipeSenior
-    public function senior_teams() 
-    { 
-        return $this->belongsToMany(SeniorTeam::class, 'equipe_seniors');
-    }
-
     //n-n avec equipeJunior
-    public function young_teams() 
+    public function teams() 
     {
-        return $this->belongsToMany(YoungTeam::class, 'equipe_juniors');
+        return $this->belongsToMany(Team::class);
     }
 }

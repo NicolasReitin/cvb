@@ -21,8 +21,7 @@ class StaffResource extends JsonResource
             'role' => $this->role,
             'phone' => $this->phone,
             'photo' => $this->photo,
-            'young_team_id' => $this->young_team_id,
-            'senior_team_id' => $this->senior_team_id,
+            'team_id' => $this->team_id,
             'created_at' => $this->created_at,
         ];   
     }

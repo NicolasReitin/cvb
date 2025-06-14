@@ -18,8 +18,7 @@ class PostResource extends JsonResource
             'content' => $this->content,
             'author' => $this->author,
             'photo' => url($this->photo),
-            'young_team_id' => $this->young_team_id,
-            'senior_team_id' => $this->senior_team_id,
+            'team_id' => $this->team_id,
             'created_at' => $this->created_at,
         ];
     }

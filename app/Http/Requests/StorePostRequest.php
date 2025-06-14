@@ -21,8 +21,7 @@ class StorePostRequest extends FormRequest
             'content' => 'nullable|string',
             'author' => 'required|string|max:50',
             'photo' => 'nullable|string',
-            'senior_team_id' => 'nullable|exists:senior_team,id',
-            'young_team_id' => 'nullable|exists:young_team,id',
+            'team_id' => 'nullable|exists:team,id',
         ];
     }
 
